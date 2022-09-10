@@ -1,0 +1,135 @@
+/*page2*/
+body 
+{
+	font-family: 'sans-serif;';
+}
+.page-banner
+{
+	position: relative;
+	height: 80vh;
+	background-image: url(img/car-bg.jpg);
+	background-color: #e341a9;
+	/*background-color: #f6dcb9;*/
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;	
+}
+.page-banner .container 
+{
+	position: relative;
+	height: 100%;	
+}
+.page-banner .container .page-title 
+{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translate(0, -50%);
+	color: #fff;
+	font: normal normal bold 50px/50px sans-serif;
+}
+.all-cars
+{
+	padding: 50px 0;
+}
+.all-cars .detail-section h2 
+{
+	text-align: center;
+	font: normal normal bold 40px/50px sans-serif;
+}
+.all-cars .detail-section p 
+{
+	font: normal normal normal 20px/30px sans-serif;
+	text-align: center;
+}
+.all-cars .car-box
+{
+	border: 1px solid #ccc;
+	margin-bottom: 30px;
+}
+.all-cars .car-box .img-box 
+{
+	padding: 10px;
+	position: relative;
+	overflow: hidden;
+}
+.all-cars .car-box .img-box  img 
+{
+	transition: 0.5s;
+}
+.all-cars .car-box .car-details
+{
+	padding: 10px;
+}
+.all-cars .car-box .car-details .car-name 
+{
+	font: normal normal bold 20px/30px sans-serif;
+	color: #e341a9;
+}
+.all-cars .car-box .car-details ul 	
+{	
+	padding-left: 1rem;
+}
+.all-cars .car-box .car-details ul li 
+{
+	font: normal normal normal 14px/30px sans-serif;
+}	
+.all-cars .car-box .car-details .car-btn 
+{
+	display: inline-block;
+	text-align: center;
+	font: normal normal bold 16px/25px sans-serif;
+	background: #e341a9;
+	padding: 10px;
+	color: #fff;
+	border-radius: 10px;
+	width: 100%;
+}
+.all-cars .car-box .car-details .car-btn:hover {
+	text-decoration: none;
+	background: #111;
+}
+.all-cars .car-box:hover .img-box img 
+{
+	transform: scale(1.1);
+	filter: brightness(1) hue-rotate(45deg);
+	transition: 0.5s;
+}
+.single-car-details
+{
+	padding: 50px 0;
+}
+.single-car-details .single-car-content
+{
+	padding:  50px;
+	background: #e341a912;
+	box-shadow: 1px 2px 10px #e341a94a
+}
+.single-car-details .single-car-content h2 
+{
+	font: normal normal bold 30px/35px sans-serif;
+}
+.single-car-details .single-car-content ul  
+{
+	padding-left: 1.5rem;
+}
+.single-car-details .single-car-content ul li 
+{
+	font: normal normal normal 16px/30px sans-serif;
+}
+.single-car-details .single-car-content .car-btn 
+{
+	display: inline-block;
+	text-align: center;
+	font: normal normal bold 16px/25px sans-serif;
+	background: #e341a9;
+	padding: 10px;
+	color: #fff;
+	border-radius: 10px;
+	width: 50%;
+}
+.single-car-details .single-car-content .car-btn:hover 
+{
+	text-decoration: none;
+	background: #111;
+}
