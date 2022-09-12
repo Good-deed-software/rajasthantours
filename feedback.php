@@ -3,7 +3,7 @@
 
 <div class="page-banner" style="background-image:url(assets/img/page4-banner.jpg);">
 	<div class="container">
-		<h1 class="page-title">Page 4</h1>
+		<!-- <h1 class="page-title">Page 4</h1> -->
 	</div>
 </div>
 <div class="page4-1">
@@ -67,8 +67,8 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-3">
-				<a href="feedback-details.php">
 				<div class="tour-card">
+					<a href="feedback-details.php">
 					<img src="assets/img/intro-banner.jpg" class="w-100 main-img">
 					<div class="tour-name-cost">
 						<h3>The Essence of Rajasthan</h3>
@@ -81,8 +81,8 @@
 						<p class="prices mt-5">Price from <span>$1450</span></p>
 						<p class="days">12 Days</p>
 					</div>
+			    	</a>
 				</div>
-			    </a>
 			</div>
 			<div class="col-lg-3 col-md-3">
 				<div class="tour-card">

@@ -1,15 +1,19 @@
 :root
 {
-	--text-primary: #e341a9;
+	--text-primary: hsl(11deg 37% 50%);
 }
 /*page2*/
 body 
 {
-	font-family: sans-serif;
+	font-family: sans-serif !important;
 }
 p 
 {
 	font: normal normal normal 18px/25px sans-serif;
+}
+.header-bar-new{
+	position: fixed;
+    background: #af6250;
 }
 .container
 {
@@ -21,7 +25,7 @@ p
 	position: relative;
 	height: 80vh;
 	background-image: url(img/car-bg.jpg);
-	background-color: #e341a9;
+	background-color: hsl(11deg 37% 50%);
 	/*background-color: #f6dcb9;*/
 	background-repeat: no-repeat;
 	background-position: center;
@@ -78,7 +82,7 @@ p
 .all-cars .car-box .car-details .car-name 
 {
 	font: normal normal bold 20px/30px sans-serif;
-	color: #e341a9;
+	color: hsl(11deg 37% 50%);
 }
 .all-cars .car-box .car-details ul 	
 {	
@@ -93,7 +97,7 @@ p
 	display: inline-block;
 	text-align: center;
 	font: normal normal bold 16px/25px sans-serif;
-	background: #e341a9;
+	background: hsl(11deg 37% 50%);
 	padding: 10px;
 	color: #fff;
 	border-radius: 10px;
@@ -145,7 +149,7 @@ p
 	display: inline-block;
 	text-align: center;
 	font: normal normal bold 16px/25px sans-serif;
-	background: #e341a9;
+	background: hsl(11deg 37% 50%);
 	padding: 10px;
 	color: #fff;
 	border-radius: 10px;
@@ -195,7 +199,8 @@ p
 }
 .page4-2
 {
-	background: var(--text-primary);
+	/* background: var(--text-primary); */
+	background: #000;
 	padding: 50px 0;
 	color: #fff;
 	font-family: sans-serif;
@@ -205,6 +210,14 @@ p
 	position: relative;
 	box-shadow: 0px 4px 8px #000;
 	margin-bottom: 30px;
+}
+.page4-2 .tour-card a
+{
+	color: #fff !important;
+}
+.page4-2 .tour-card a:hover
+{
+	color: #fff !important;
 }
 .page4-2 .tour-card .tour-name-cost
 {
@@ -380,12 +393,12 @@ p
 .testimonials
 {
 	padding: 50px 0 ;
-	background: var(--text-primary);
+	/* background: var(--text-primary); */
 }
 .testimonials h2
 {
 	font: normal normal bold 30px/40px sans-serif;
-	color: #fff;	
+	color: #000;	
 }
 .testimonials .carousel
 {
@@ -399,7 +412,7 @@ p
 }	
 .testimonials .carousel-inner img
 {
-	width: auto;
+	width: 50px !important;
 	height: auto;
 	margin-bottom: 15px;
 }
@@ -411,7 +424,7 @@ p
 .testimonials .carousel-inner .testimonials-details
 {
 	font-family: sans-serif;
-	color: #fff;
+	color: #000;
 }
 .testimonials .carousel-inner .testimonials-details .name 
 {
@@ -738,7 +751,7 @@ p
 .page3-3
 {
 	height: 100vh;
-	background-image: url(../assets/img/bg1.jpg);
+	background-image: url(../assets/img/bg3.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	padding: 100px 0;
@@ -938,4 +951,12 @@ p
 .more-services .owl-nav .owl-next span
 {
 	transform: rotate(-45deg);
+}
+.black-btn{
+	background: #000 !important;
+}
+.single-car-details .single-car-content .black-btn:hover 
+{
+	text-decoration: none;
+	background: hsl(11deg 37% 50%) !important;
 }

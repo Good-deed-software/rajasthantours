@@ -39,7 +39,7 @@
             Personalised service lies at the heart of what we do at Rajasthan Tours. Founded 60 years ago, Rajasthan Tours is a high-end award-winning travel company that pioneered tourism in India’s most magical state. We are unsurpassed in providing unforgettable tailor-made holidays in Rajasthan, quality destination management services, and some of the most talked-about and spectacular weddings in Rajasthan.  We are a family-run company and pride ourselves on our ability to offer first-hand knowledge, insider experiences, creative ideas, and exceptional service. Rajasthan Tours has a well-earned reputation for its friendly approach and attention to detail. With multiple offices across India and dedicated staff on the ground, we are ideally placed to serve your luxury travel needs in Rajasthan and beyond.             
          </p>
          <div class="text-center mt-4">
-            <a href="about/index.html" class="_enquire-bg _enquire-ho py-2 px-5">Our Story</a>
+            <a href="about/index.php" class="_enquire-bg _enquire-ho py-2 px-5">Our Story</a>
          </div>
       </article>
    </div>
@@ -185,8 +185,10 @@
          <div class="carousel-inner">
             <div class="carousel-item active">
                <div style="padding: 20px">
-                  <div>
-                     <h4><strong>Dr. Kenneth Robbins</strong></h4>
+                  <div class="text-center">
+                     <h4>
+                        <strong>Dr. Kenneth Robbins</strong>
+                     </h4>
                      <hr class="_line">
                      <span class="fa fa-star sselected"></span>
                      <span class="fa fa-star sselected"></span>
@@ -211,7 +213,7 @@
             </div>
             <div class="carousel-item">
                <div style="padding: 20px">
-                  <div>
+                  <div class="text-center">
                      <h4><strong>Keith & Pammie Steel</strong></h4>
                      <hr class="_line">
                      <span class="fa fa-star sselected"></span>
@@ -237,7 +239,7 @@
             </div>
             <div class="carousel-item">
                <div style="padding: 20px">
-                  <div>
+                  <div class="text-center">
                      <h4><strong>Marie-Christine Kirk</strong></h4>
                      <hr class="_line">
                      <span class="fa fa-star sselected"></span>

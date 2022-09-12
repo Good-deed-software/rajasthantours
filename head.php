@@ -18,7 +18,7 @@
       <link rel="stylesheet" href="assets/style.css">
       <link rel="stylesheet" href="assets/owl.carousel.min.css">
       <link rel="stylesheet" href="assets/owl.theme.default.min.css">
-      <link rel="icon" type="image/png" href="templates/images/favicon.png">
+      <link rel="icon" type="image/png" href="assets/img/favicon.png">
       <style type="text/css">
          .top-lnkss {
          text-align: right;
@@ -70,7 +70,7 @@
          padding: 20px 100px;
          }
          .call_number{
-         background: #e341a9 !important;
+         background: hsl(11deg 37% 50%) !important;
          padding: 3px;
          font-size: 14px !important;
          padding: 5px 10px;
@@ -98,11 +98,11 @@
          margin: 15px;
          background: #eeeeee;
          }
-         .carousel-item ._line {
+         /* .carousel-item ._line {
          margin: 10px 0 10px 0;
-         }
+         } */
          .carousel-indicators li {
-         background-color: #e341a9;
+         background-color: hsl(11deg 37% 50%);
          } 
          @media (max-width: 992px){
          .navbar-brand {

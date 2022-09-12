@@ -22,7 +22,7 @@
 								<li>AIR CONDITIONER: YES</li>
 								<li>FIRST AID KIT: YES</li>
 							</ul>
-							<a href="#" class="car-btn">Book Now</a>
+							<a href="#" class="car-btn black-btn">Book Now</a>
 						</div>
 					</div>
 				</div>
