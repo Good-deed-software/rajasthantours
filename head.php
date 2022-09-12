@@ -16,6 +16,8 @@
       <script src="assets/bootstrap.min.js"></script>
       <link rel="stylesheet" href="assets/all.css">
       <link rel="stylesheet" href="assets/style.css">
+      <link rel="stylesheet" href="assets/owl.carousel.min.css">
+      <link rel="stylesheet" href="assets/owl.theme.default.min.css">
       <link rel="icon" type="image/png" href="templates/images/favicon.png">
       <style type="text/css">
          .top-lnkss {

@@ -33,7 +33,7 @@
 							<li>AIR CONDITIONER: YES</li>
 							<li>FIRST AID KIT: YES</li>
 						</ul>
-						<a href="car-rental-detail.php" class="car-btn">Book Now</a>
+						<a href="car-rental-details.php" class="car-btn">Book Now</a>
 					</div>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 							<li>AIR CONDITIONER: YES</li>
 							<li>FIRST AID KIT: YES</li>
 						</ul>
-						<a href="car-rental-detail.php" class="car-btn">Book Now</a>
+						<a href="car-rental-details.php" class="car-btn">Book Now</a>
 					</div>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 							<li>AIR CONDITIONER: YES</li>
 							<li>FIRST AID KIT: YES</li>
 						</ul>
-						<a href="car-rental-detail.php" class="car-btn">Book Now</a>
+						<a href="car-rental-details.php" class="car-btn">Book Now</a>
 					</div>
 				</div>
 			</div>
@@ -81,7 +81,7 @@
 							<li>AIR CONDITIONER: YES</li>
 							<li>FIRST AID KIT: YES</li>
 						</ul>
-						<a href="car-rental-detail.php" class="car-btn">Book Now</a>
+						<a href="car-rental-details.php" class="car-btn">Book Now</a>
 					</div>
 				</div>
 			</div>

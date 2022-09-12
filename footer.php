@@ -20,11 +20,7 @@
 
                                 <h5 class="footer-title">Our Address</h5>
                                 <address class="small">
-                                    <a class="_footer-a" target="_blank" href="https://goo.gl/maps/GjdQ769gYnRo5tA99">Rajasthan Tours Pvt Ltd<br />
-Rambagh Palace<br />
-Bhawani Singh Road<br />
-Jaipur 302005<br />
-Rajasthan, India</a>
+                                    <a class="_footer-a" target="_blank" href="https://goo.gl/maps/CwSLQ3dD656k81z6A">47- Narayan Nagar, Benar Road, Dadi ka Phatak Jhotwara Jaipur - 302012
                                 </address>
                             </div>
                         </div>
@@ -32,17 +28,11 @@ Rajasthan, India</a>
                         <div>
                         <h5 class="footer-title">Contact Us</h5>
                         <ul class="list-unstyled text-small">
-                            <li class="small"><i class="fas fa-envelope"></i>&nbsp;&nbsp; <a href="mailto:info@rajasthantours.travel"
-                                    class="_footer-a">info@rajasthantours.travel</a></li>
+                            <li class="small"><i class="fas fa-envelope"></i>&nbsp;&nbsp; <a href="mailto:info@souvenirtravelindia.com"
+                                    class="_footer-a">info@souvenirtravelindia.com</a></li>
                             <li class="small"><i class="fas fa-phone"></i>&nbsp;&nbsp;<a class="_footer-a"
-                                href="tel:+91 9982815111"> +91 9982815111</a></li>
-                            <li class="small"> <i class="fas fa-clock"></i>&nbsp;&nbsp;
-                                    Opening Hours: 
-                              <ul class="list-unstyled text-small">
-                                <li style="margin-left: 22px;">Monday to Friday,<br />
-10 am to 6 pm IST</li>
-                              </ul>
-                            </li>
+                                href="tel:+91 7340679129"> +91 734-0679129</a></li>
+                            
                             <!--<li class="social-icon"><a href="#" target="blank"><i class="fab fa-facebook"></i></a></li>
                             <li class="social-icon"><a href="#" target="blank"><i class="fab fa-instagram"></i></a></li>
                             <li class="social-icon"><a href="#" target="blank"><i class="fab fa-youtube"></i></a></li>-->
@@ -58,22 +48,12 @@ Rajasthan, India</a>
             <div class="row">
                 <div class="col-6 col-sm-12 col-md-8">
                     <ul class="list-unstyled text-small">
-                        <li><a class="small _footer-a" href="itineraries/index.html">Itinearies</a></li>
-                        <!--<li><a class="small _footer-a" href="https://rajasthantours.travel/inspiration/">Inspiration</a></li>-->
-                        <li><a class="small _footer-a" href="about/index.html">Our History</a></li>
-                        <li><a class="small _footer-a" href="about/why.html">Why rely on us</a>
-                        </li>
-                        <li><a class="small _footer-a" href="https://www.rajasthantours.travel/reviews">Reviews</a></li>
+                        <li><a class="small _footer-a" href="itineraries.php">Itinearies</a></li>
+                        <li><a class="small _footer-a" href="#">Our History</a></li>
+                        <li><a class="small _footer-a" href="#">Reviews</a></li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-12 col-md-4">
-                    <ul class="list-unstyled text-small">
-                        <!--<li><a class="small _footer-a" href="https://www.rajasthantours.travel/reviews">Reviews</a></li>-->
-                        <li><a class="small _footer-a" href="services/royal-weddings-in-rajasthan.html">Weddings</a></li>
-                        <li><a class="small _footer-a" href="hotels/10-best-palace-hotels.html">Hotels</a></li>
-                        <li><a class="small _footer-a" href="contact/index.html">Enquire</a></li>
-                    </ul>
-                </div>
+
             </div>
         </div>
     </div>
@@ -84,8 +64,7 @@ Rajasthan, India</a>
         
 
 <div style="background:black" class="text-white d-flex py-2 mt-2 justify-content-center small align-items-center">
-    © 2022 | Rajasthan Tours <!-- <span>| Developed by&nbsp;
-    <a href="http://sowere.com" class="_footer-a">Sowere Desk Solution</a></span> -->
+    © 2022 | Souvenirtravelindias
 </div>
 </footer>
 
@@ -108,7 +87,7 @@ Rajasthan, India</a>
         </div>
         <section class="py-3 px-2">
             <article class="_chat-f-box p-4 m-2">
-        <form method="post" action="https://rajasthantours.travel/contact/send" class="text_line">
+        <form method="post" action="#" class="text_line">
             <div class="form-group _form-input py-2 pl-2">
                 <select name="title" id="title" class="form-control" required>
                   <option value="">Title</option>
@@ -402,7 +381,7 @@ Enquire
 </div>
 
 <!--Code For tel number-->
-<a id="call_btn" href="tel:+919982815111"><i class="fa fa-phone"></i></a>
+<a id="call_btn" href="tel:+917340679129"><i class="fa fa-phone"></i></a>
 <style>
 article._chat-f-box.p-4.m-2 .form-group {
 margin-bottom: 5px!important;
@@ -452,6 +431,7 @@ user-select: none !important;
 </body>
 
 </html>
+<script src="assets/owl.carousel.min.js"></script>
 <script src='www.google.com/recaptcha/api.js'></script>
 <script>
 $(document).ready(function(){
@@ -468,5 +448,30 @@ $('#_inquiry_close').click(function(){
 
 });
 </script>
+
+<script type="text/javascript">
+   $(document).ready(function() {      
+
+      // brands-carousel
+    $('.owl-carousel.more-services').owlCarousel({
+        dots:false,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav:false
+            },
+            600: {
+                items: 1,
+                nav:false
+            },
+            1000: {
+                items: 1
+            }
+        }
+    });
+  });
+  </script>
 
 
