@@ -50,7 +50,7 @@
     </div>
   </div>
   </div>
-  <div style="background:hsl(11deg 37% 50%);" class="text-white d-flex py-2 mt-2 justify-content-center small align-items-center"> © 2022 | Souvenirtravelindias </div>
+  <div style="background:#8d120b;" class="text-white d-flex py-2 mt-2 justify-content-center small align-items-center"> © 2022 | Souvenirtravelindias </div>
 </footer>
 <section class="position-relative" id="_inquiry_form" style="display:none;">
   <div class="_chat-bg border bg-white position-fixed" style="z-index:1000">

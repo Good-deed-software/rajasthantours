@@ -15,74 +15,31 @@
 @endsection
 
 @section('content')    
-    @if ($user->id != 1)     
+    @if ($slider->id != 1)     
         <div class="box box-primary">
     		<div class="box-body">
     			<div class="row">
     				<div class="col-md-12">	
-    					 <form action="{{ route('user.update',$user->id) }}" method="post">
+    					 <form action="{{ route('slider.update',$slider->id) }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <input type="hidden" name="_method" value="put">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                                        <label for="nome">Name</label>
-                                        <input type="text" name="name" class="form-control" maxlength="30" minlength="4" placeholder="Name" required="" autofocus value="{{$user->name}}">
-                                        @if($errors->has('name'))
+                                        <label for="nome">Add Image</label>
+                                        <input type="file" name="slider_image" class="form-control" required="">
+										<img src="{{asset('upload/slider_image/'.$slider->slider_image)}}" height="100" width="100">
+                                        @if($errors->has('slider'))
                                             <span class="help-block">
-                                                <strong>{{ $errors->first('name') }}</strong>
+                                                <strong>{{ $errors->first('slider') }}</strong>
                                             </span>
                                         @endif
                                     </div>
+									<button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-save"></i> Save</button>
+                               
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                                        <label for="nome">E-mail</label>
-                                        <input type="email" name="email" class="form-control" placeholder="E-mail" required="" value="{{$user->email}}">
-                                        @if($errors->has('email'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }}">
-                                        <label for="nome">Permission Group</label>
-                                        <select name="roles[]" class="form-control select2" multiple="multiple" data-placeholder="Permission Group">
-                                            @foreach($roles as $role)
-                                                @if($role->id != 1)
-                                                    @if(in_array($role->id, $roles_ids))
-                                                        <option value="{{ $role->id}}" selected="true"> {{ $role->name}} </option>
-                                                    @else
-                                                        <option value="{{ $role->id}}"> {{ $role->name}} </option>
-                                                    @endif                                             
-                                                @endif                                             
-                                            @endforeach
-                                        </select>
-                                        @if($errors->has('roles'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('roles') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">                                    
-                                        <label>
-                                            <input type="hidden" name="active" value="0">
-                                            <input type="checkbox" name="active" value="1" class="minimal" id="icheck" 
-                                            @if($user->active == true)
-                                                checked
-                                            @endif
-                                            >
-                                            Active
-                                        </label>
-                                    </div>
-                                </div> 
-                                <div class="col-lg-6">
-                                   <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-save"></i> Save</button>
-                                </div>
+                                
+                                
                             </div>
                         </form>
     				</div>
