@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Http\Controllers\Profile; 
+namespace App\Http\Controllers\Tours; 
 
 use App\Http\Controllers\Controller; 
 use Illuminate\Support\Facades\Auth;
@@ -9,15 +9,14 @@ use App\Models\Role;
 use App\Models\Tour;
 
 
-class ProfileController extends Controller 
+class ToursController extends Controller 
 { 
 	public function index()
     { 
         //$this->authorize('show-user', Tour::class);
 
-        $tour = Tour::paginate(15);
-
-        return view('tour.index', compact('tour'));
+       $tours= Tour::all();
+        return view('tour.index', compact('tours'));
     }
 
     public function show($id)
@@ -43,10 +42,23 @@ class ProfileController extends Controller
     {
         //$this->authorize('create-user', Tour::class);
 
-        $tour = Tour::create($request->all());
-
+        $tours=new Tour;
+        $tours->tittle=$request->tittle;
+        $tours->duration=$request->duration;
+        $tours->group_info=$request->group_info;
+        $tours->destination=$request->destination;
+        $tours->description=$request->description;
+        $tours->url=$request->url;
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('upload/tours',$filename);
+            $tours->image = $filename;
+        }
+       $tours->save();
         $this->flashMessage('check', 'tour successfully added!', 'success');
-
         return redirect()->route('tour.create');
     }
 
@@ -60,7 +72,7 @@ class ProfileController extends Controller
         	$this->flashMessage('warning', 'tour not found!', 'danger');            
             return redirect()->route('tour');
         }  
-        return view('users.edit',compact('tour'));
+        return view('tour.edit',compact('tour'));
     }
 
     public function update(UpdateUserRequest $request,$id)

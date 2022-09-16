@@ -20,7 +20,7 @@
 		<div class="box-body">
 			<div class="row">
 				<div class="col-md-12">	
-					 <form action="{{ route('user.store') }}" method="post">
+					 <form action="{{ route('testimonial.store') }}" method="post">
                         {{ csrf_field() }}
                         <input type="hidden" name="active" value="1">
                         <div class="row">
@@ -34,60 +34,32 @@
                                         </span>
                                     @endif
                                 </div>
+                                
                             </div>
                             <div class="col-lg-6">
-                                <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                                    <label for="nome">E-mail</label>
-                                    <input type="email" name="email" class="form-control" placeholder="E-mail" required="" value="{{ old('email') }}">
-                                    @if($errors->has('email'))
+                                <div class="form-group {{ $errors->has('city') ? 'has-error' : '' }}">
+                                    <label for="nome">City</label>
+                                    <input type="text" name="city" class="form-control" maxlength="30" minlength="4" placeholder="Name" required="" value="{{ old('city') }}" autofocus>
+                                    @if($errors->has('city'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('email') }}</strong>
+                                            <strong>{{ $errors->first('city') }}</strong>
                                         </span>
                                     @endif
                                 </div>
+                                
                             </div>
                             <div class="col-lg-6">
-                                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                                    <label for="nome">Password</label>
-                                    <input type="password" name="password" class="form-control" placeholder="Password" minlength="6" required="">
-                                    @if($errors->has('password'))
+                                <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+                                    <label for="nome">Description</label>
+                                    <textarea required type="text" name="description" id="editor" class="form-control" value="{{ old('description') }}" autofocus ></textarea>
+                                    @if($errors->has('description'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('password') }}</strong>
+                                            <strong>{{ $errors->first('description') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group {{ $errors->has('password-confirm') ? 'has-error' : '' }}">
-                                    <label for="nome">Confirm Password</label>
-                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" minlength="6" required="">
-                                    @if($errors->has('password-confirm'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('password-confirm') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }}">
-                                    <label for="nome">Permission Group</label>
-                                    <select name="roles[]" class="form-control select2" multiple="multiple" data-placeholder="Permission Group" required="">
-                                        @foreach($roles as $role)
-                                            @if($role->id != 1)                                            
-                                                <option value="{{ $role->id}}"> {{ $role->name}} </option>  
-                                            @endif      
-                                        @endforeach
-                                    </select>
-                                    @if($errors->has('roles'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('roles') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-lg-6"></div> 
-                            <div class="col-lg-6">
-                               <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> Add</button>
+                            </div> 
+                            <div class="col-lg-6"><button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> Add</button>
                             </div>
                         </div>
                     </form>

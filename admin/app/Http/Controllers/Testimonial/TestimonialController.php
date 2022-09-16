@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Http\Controllers\Profile; 
+namespace App\Http\Controllers\Testimonial; 
 
 use App\Http\Controllers\Controller; 
 use Illuminate\Support\Facades\Auth;
@@ -9,7 +9,7 @@ use App\Models\Role;
 use App\Models\Testimonial;
 
 
-class ProfileController extends Controller 
+class TestimonialController extends Controller 
 { 
 	public function index()
     { 
@@ -41,13 +41,13 @@ class ProfileController extends Controller
 
     public function store(Request $request)
     {
-        //$this->authorize('create-user', Testimonial::class);
-
-        $testimonial = Testimonial::create($request->all());
-
-        $this->flashMessage('check', 'testimonial successfully added!', 'success');
-
-        return redirect()->route('testimonial.create');
+        $testimonial=new Testimonial;
+        $testimonial->name = $request->input('name');
+        $testimonial->city = $request->input('city');
+        $testimonial->description = $request->input('description');
+        $testimonial->save();
+        $this->flashMessage('success', 'testimonial Added', 'success');   
+        return view('testimonial.create');
     }
 
     public function edit($id)
@@ -60,21 +60,24 @@ class ProfileController extends Controller
         	$this->flashMessage('warning', 'testimonial not found!', 'danger');            
             return redirect()->route('testimonial');
         }  
-        return view('users.edit',compact('testimonial'));
+        return view('testimonial.edit',compact('testimonial'));
     }
 
-    public function update(UpdateUserRequest $request,$id)
+    public function update(request $request,$id)
     {
     	//$this->authorize('edit-user', Testimonial::class);
 
     	$testimonial = Testimonial::find($id);
 
+        $testimonial->name = $request->input('name');
+        $testimonial->city = $request->input('city');
+        $testimonial->description = $request->input('description');
         if(!$testimonial){
         	$this->flashMessage('warning', 'testimonial not found!', 'danger');            
             return redirect()->route('testimonial');
         }
 
-        $testimonial->update($request->all());
+        $testimonial->update();
         $this->flashMessage('check', 'testimonial updated successfully!', 'success');
 
         return redirect()->route('testimonial');

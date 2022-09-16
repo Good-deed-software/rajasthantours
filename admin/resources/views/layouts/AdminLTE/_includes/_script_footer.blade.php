@@ -38,7 +38,9 @@
 		<!-- Select2 -->
 		<script src="{{ asset('assets/adminlte/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
 		<!-- Mask -->
-		
+		<script>
+			CKEDITOR.replace( 'editor' );
+		</script>
 		<script type="text/javascript"> 
 	      $(document).ready( function() {
 	        $('#flash_message').delay(3000).fadeOut();

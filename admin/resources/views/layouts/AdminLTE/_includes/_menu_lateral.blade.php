@@ -45,7 +45,25 @@
 						</a>
 					</li>
 				</ul>
-			</li>      
+			</li> 
+			<li class="
+						{{ Request::segment(1) === null ? 'active' : null }}
+						{{ Request::segment(1) === 'home' ? 'active' : null }}
+					  ">
+				<a href="{{route('slider')}}" title="Slider"><i class="fa fa-sliders"></i> <span>Main Slider</span></a>
+			</li> 
+			<li class="
+						{{ Request::segment(1) === null ? 'active' : null }}
+						{{ Request::segment(1) === 'home' ? 'active' : null }}
+					  ">
+				<a href="{{route('testimonial')}}" title="Testimonial"><i class="fa fa-quote-right"></i> <span>Testimonial</span></a>
+			</li>  
+			<li class="
+						{{ Request::segment(1) === null ? 'active' : null }}
+						{{ Request::segment(1) === 'home' ? 'active' : null }}
+					  ">
+				<a href="{{route('tour')}}" title="Tour"><i class="fa fa-tripadvisor"></i> <span>Tour</span></a>
+			</li>   
 		</ul>
 	</section>
 </aside>

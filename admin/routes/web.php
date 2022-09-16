@@ -20,7 +20,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Profile'], function (){
 Route::group(['namespace' => 'App\Http\Controllers\Slider'], function (){ 
 	Route::get('/slider', 'SliderController@index')->name('slider');
 	Route::get('/slider/create', 'SliderController@create')->name('slider.create');
-	Route::post('/slider/store', 'SliderController@store')->name('slider.store');
+	Route::get('/slider/store', 'SliderController@store')->name('slider.store');
 	Route::get('/slider/edit/{id}', 'SliderController@edit')->name('slider.edit');
 	Route::put('/slider/update/{id}', 'SliderController@update')->name('slider.update');
 	Route::get('/slider/destroy/{id}', 'SliderController@destroy')->name('slider.destroy');

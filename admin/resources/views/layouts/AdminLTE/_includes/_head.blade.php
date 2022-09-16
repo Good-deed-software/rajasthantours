@@ -37,6 +37,7 @@
 <script src="{{ asset('assets/adminlte/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- MAskMoney -->
 <script src="{{ asset('assets/plugins/maskMoney/jquery.maskMoney.min.js') }}"></script>
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 <style>
         .link_menu_page{ color:#222d32; }
         .caixa-alta { text-transform:uppercase; }
