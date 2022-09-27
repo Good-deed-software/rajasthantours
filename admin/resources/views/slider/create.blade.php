@@ -2,7 +2,7 @@
 
 @section('icon_page', 'plus')
 
-@section('title', 'Add User')
+@section('title', 'Sider')
 
 @section('menu_pagina')	
 		
@@ -21,8 +21,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					 <form action="{{ route('slider.store') }}" method="post" enctype="multipart/form-data">
-                        
-                        @csrf
+                     {{ csrf_field() }}
                         <input type="hidden" name="active" value="1">
                         <div class="row">
                             <div class="col-lg-6">

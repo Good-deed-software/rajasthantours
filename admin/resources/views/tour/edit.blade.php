@@ -14,20 +14,19 @@
 
 @endsection
 
-@section('content')    
-    @if ($tour->id != 1)     
+@section('content')     
         <div class="box box-primary">
     		<div class="box-body">
     			<div class="row">
     				<div class="col-md-12">	
-    					 <form action="{{ route('tour.update',$tour->id) }}" method="post">
+    					 <form action="{{ route('tour.update',$tour->id) }}" method="post" enctype="multipart/form-data">
                          {{ csrf_field() }}
-                        <input type="hidden" name="active" value="1">
+                         <input type="hidden" name="_method" value="put">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                                    <label for="nome">Add Image</label>
-                                    <input type="file" name="image" class="form-control" required="" autofocus>
+                                    <label for="nome">Add Image1</label>
+                                    <input type="file" name="image" class="form-control"  autofocus>
                                     <img src="{{asset('upload/tours/'.$tour->image)}}" alt="Iour Image" height="100" width="100">
                                     @if($errors->has('image'))
                                         <span class="help-block">
@@ -106,16 +105,14 @@
 
                             <div class="col-lg-6"></div> 
                             <div class="col-lg-6">
-                               <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> Add</button>
+                               <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> Update</button>
                             </div>
                         </div>
                         </form>
     				</div>
     			</div>
     		</div>
-    	</div>    
-    @endif
-
+    	</div>   
 @endsection
 
 @section('layout_js')    

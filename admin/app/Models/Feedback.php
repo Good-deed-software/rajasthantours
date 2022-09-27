@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Feedback extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    protected $table="feedback";
+
+    protected $fillable = [
+         'image','title', 'price',
+        'duration','description'
+    ];
 }

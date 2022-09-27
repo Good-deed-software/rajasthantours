@@ -1,18 +1,20 @@
 <?php include('head.php')?>
+
 <?php include('header.php')?>
 
 <div class="w-100" style="height:100vh;">
    <div id="carouselExampleCaptions" class="carousel slide  carousel-fade" data-ride="carousel">
-      <div class="carousel-inner" style="height:100vh;">
-         <div class="carousel-item active d-block w-100" style="height:100vh; margin-top:86px; background:url(templates/images/sliders/1.jpg) center center no-repeat; background-size:cover">
+      <div class="carousel-inner" style="height:100vh">
+         <div class="carousel-item active" style="height:100vh; background:url(templates/images/sliders/1.jpg) center center no-repeat; background-size:cover">
          </div>
-         <div class="carousel-item " style="height:100vh; margin-top:90px; background:url(templates/images/sliders/2.jpg) center center no-repeat; background-size:cover">
+         <div class="carousel-item " style="height:100vh; background:url(templates/images/sliders/2.jpg) center center no-repeat; background-size:cover">
          </div>
          <div class="carousel-item " style="height:100vh; background:url(templates/images/sliders/3.jpg) center center no-repeat; background-size:cover">
          </div>
          <div class="carousel-item " style="height:100vh; background:url(templates/images/sliders/4.jpg) center center no-repeat; background-size:cover">
          </div>
-         
+         <div class="carousel-item " style="height:100vh; background:url(templates/images/sliders/5.jpg) center center no-repeat; background-size:cover">
+         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -27,8 +29,6 @@
 <script>
    $('.carousel').carousel()
 </script>
-
-
 <div class="page3-5 pt-5">
 	<div class="container">
 		<div class="row">
@@ -86,9 +86,8 @@
 	</div>
 </div>
 
-
 <!--car rental-->
-<div class="page3-5 pt-5">
+<div class="page3-5 pt-5" style="padding:0px !important;">
 <div class="container">
 <div class="row">
 <div class="col-lg-12 col-md-12 mb-4">
@@ -201,7 +200,6 @@
 		</div>
 	</div>
 </div>
-
 
 <section class="w-100 mt-0 testimonials-slider" style="color:#303440; background:#e7e7e7">
    <article class=" pb-5 d-flex flex-column justify-content-center align-items-center text-center ">
@@ -331,7 +329,10 @@
       </div>
    </article>
 </section>
-
+<!-- <iframe width="100%" height="545" src="https://www.youtube.com/embed/sWMnfd4Cras?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+   allowfullscreen></iframe>
+   </iframe> -->
+<!-- why rely -->
 
 <!-- footer -->
 <?php include('footer.php')?>

@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Http\Controllers\Profile; 
+namespace App\Http\Controllers\Feedback; 
 
 use App\Http\Controllers\Controller; 
 use Illuminate\Support\Facades\Auth;
@@ -9,7 +9,7 @@ use App\Models\Role;
 use App\Models\Feedback;
 
 
-class ProfileController extends Controller 
+class FeedbackController extends Controller 
 { 
 	public function index()
     { 
@@ -42,8 +42,22 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
         //$this->authorize('create-user', Feedback::class);
+        
+        $feedback = new Feedback;
+        $feedback->title = $request->title;
+        $feedback->price = $request->price;
+        $feedback->duration = $request->duration;
+        $feedback->description = $request->description;
 
-        $feedback = Feedback::create($request->all());
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalName();
+            $filename = time().'.'.$extention;
+            $file->move('upload/feedback',$filename);
+            $feedback['image'] = $filename;
+        }
+        $feedback->save();
 
         $this->flashMessage('check', 'feedback successfully added!', 'success');
 
@@ -60,21 +74,30 @@ class ProfileController extends Controller
         	$this->flashMessage('warning', 'feedback not found!', 'danger');            
             return redirect()->route('feedback');
         }  
-        return view('users.edit',compact('feedback'));
+        return view('feedback.edit',compact('feedback'));
     }
 
-    public function update(UpdateUserRequest $request,$id)
+    public function update(Request $request,$id)
     {
     	//$this->authorize('edit-user', Feedback::class);
-
+        $data = $request->except(['_token','_method','image']);
     	$feedback = Feedback::find($id);
 
         if(!$feedback){
         	$this->flashMessage('warning', 'feedback not found!', 'danger');            
             return redirect()->route('feedback');
         }
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('upload/feedback',$filename);
+            $data['image'] = $filename;
+        }
 
-        $feedback->update($request->all());
+
+        Feedback::whereId($id)->update($data);
         $this->flashMessage('check', 'feedback updated successfully!', 'success');
 
         return redirect()->route('feedback');

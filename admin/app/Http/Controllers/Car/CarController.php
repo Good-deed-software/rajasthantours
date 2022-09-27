@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Http\Controllers\Profile; 
+namespace App\Http\Controllers\Car; 
 
 use App\Http\Controllers\Controller; 
 use Illuminate\Support\Facades\Auth;
@@ -9,7 +9,7 @@ use App\Models\Role;
 use App\Models\Car;
 
 
-class ProfileController extends Controller 
+class CarController extends Controller 
 { 
 	public function index()
     { 
@@ -41,10 +41,24 @@ class ProfileController extends Controller
 
     public function store(Request $request)
     {
-        //$this->authorize('create-user', Car::class);
+        $car = new Car;
 
-        $car = Car::create($request->all());
+        $car->title=$request->title;
+        $car->carname=$request->carname;
+        $car->url=$request->url;
+        $car->specs=$request->specs;
+        $car->description=$request->description;
 
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('upload/cars',$filename);
+            $car['image'] = $filename;
+        }
+
+        $car->save();
         $this->flashMessage('check', 'car successfully added!', 'success');
 
         return redirect()->route('car.create');
@@ -60,13 +74,13 @@ class ProfileController extends Controller
         	$this->flashMessage('warning', 'car not found!', 'danger');            
             return redirect()->route('car');
         }  
-        return view('users.edit',compact('car'));
+        return view('car.edit',compact('car'));
     }
 
-    public function update(UpdateUserRequest $request,$id)
+    public function update(Request $request,$id)
     {
     	//$this->authorize('edit-user', Car::class);
-
+        $data = $request->except(['_token','_method','image']);
     	$car = Car::find($id);
 
         if(!$car){
@@ -74,8 +88,19 @@ class ProfileController extends Controller
             return redirect()->route('car');
         }
 
-        $car->update($request->all());
-        $this->flashMessage('check', 'car updated successfully!', 'success');
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('upload/cars',$filename);
+            $data['image'] = $filename;
+        }
+
+
+        Car::whereId($id)->update($data);
+        
+        $this->flashMessage('check', 'Cars updated successfully!', 'success');
 
         return redirect()->route('car');
     }

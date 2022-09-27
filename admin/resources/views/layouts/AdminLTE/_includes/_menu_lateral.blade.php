@@ -63,7 +63,31 @@
 						{{ Request::segment(1) === 'home' ? 'active' : null }}
 					  ">
 				<a href="{{route('tour')}}" title="Tour"><i class="fa fa-tripadvisor"></i> <span>Tour</span></a>
-			</li>   
+			</li> 
+			<li class="
+						{{ Request::segment(1) === null ? 'active' : null }}
+						{{ Request::segment(1) === 'home' ? 'active' : null }}
+					  ">
+				<a href="{{route('car')}}" title="Cars"><i class="fa fa-car"></i> <span>Rental Cars</span></a>
+			</li>
+			<li class="
+						{{ Request::segment(1) === null ? 'active' : null }}
+						{{ Request::segment(1) === 'home' ? 'active' : null }}
+					  ">
+				<a href="{{route('feedback')}}" title="Feedback"><i class="fa fa-comments-o"></i> <span>Explore</span></a>
+			</li> 
+			<li class="
+						{{ Request::segment(1) === null ? 'active' : null }}
+						{{ Request::segment(1) === 'home' ? 'active' : null }}
+					  ">
+				<a href="{{route('details')}}" title="Feedback Detail"><i class="fa fa-info-circle"></i> <span>Explore Detail</span></a>
+			</li>
+			<li class="
+						{{ Request::segment(1) === null ? 'active' : null }}
+						{{ Request::segment(1) === 'home' ? 'active' : null }}
+					  ">
+				<a href="{{route('itineraries_details')}}" title="Itineraries Detail"><i class="fa fa-info-circle"></i> <span>Itineraries Detail</span></a>
+			</li> 
 		</ul>
 	</section>
 </aside>

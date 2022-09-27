@@ -75,18 +75,31 @@ class ToursController extends Controller
         return view('tour.edit',compact('tour'));
     }
 
-    public function update(UpdateUserRequest $request,$id)
+    public function update(Request $request,$id)
     {
     	//$this->authorize('edit-user', Tour::class);
-
+        $data = $request->except(['_token','_method','image']);
     	$tour = Tour::find($id);
+        
 
         if(!$tour){
         	$this->flashMessage('warning', 'tour not found!', 'danger');            
             return redirect()->route('tour');
         }
 
-        $tour->update($request->all());
+        
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('upload/tours',$filename);
+            $data['image'] = $filename;
+        }
+
+
+        Tour::whereId($id)->update($data);
+        
         $this->flashMessage('check', 'tour updated successfully!', 'success');
 
         return redirect()->route('tour');
