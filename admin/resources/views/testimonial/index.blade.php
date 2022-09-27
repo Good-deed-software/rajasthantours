@@ -2,7 +2,7 @@
 
 @section('icon_page', 'testimonial')
 
-@section('title', 'testimonials')
+@section('title', 'Testimonials')
 
 @section('menu_pagina')	
 		
@@ -38,7 +38,6 @@
 							</thead>
 							<tbody>
 								@foreach($testimonial as $testimonial)
-									@if ($testimonial->id != 1)
 										<tr>
 											        
 											<td class="text-center">{{ $testimonial->name }}</td>             
@@ -71,7 +70,6 @@
 												</div>
 											</div>
 										</div>
-									@endif
 								@endforeach
 							</tbody>
 							

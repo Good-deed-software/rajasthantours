@@ -14,8 +14,7 @@
 
 @endsection
 
-@section('content')    
-    @if ($slider->id != 1)     
+@section('content')  
         <div class="box box-primary">
     		<div class="box-body">
     			<div class="row">
@@ -46,8 +45,7 @@
     			</div>
     		</div>
     	</div>    
-    @endif
-
+    
 @endsection
 
 @section('layout_js')    

@@ -2,7 +2,7 @@
 
 @section('icon_page', 'slider')
 
-@section('title', 'sliders')
+@section('title', 'Slider')
 
 @section('menu_pagina')	
 		
@@ -37,7 +37,6 @@
 							</thead>
 							<tbody>
 								@foreach($slider as $slider)
-									@if ($slider->id != 1)
 										<tr>
 											<td>{{$slider->id}}</td>
 											<td class="text-center">
@@ -68,7 +67,6 @@
 												</div>
 											</div>
 										</div>
-									@endif
 								@endforeach
 							</tbody>
 							

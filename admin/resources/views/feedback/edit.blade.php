@@ -2,95 +2,92 @@
 
 @section('icon_page', 'pencil')
 
-@section('title', 'Edit User')
+@section('title', 'Edit feedback')
 
 @section('menu_pagina')	
 		
 	<li role="presentation">
-		<a href="{{ route('user') }}" class="link_menu_page">
-			<i class="fa fa-user"></i> Users
+		<a href="{{ route('feedback') }}" class="link_menu_page">
+			<i class="fa fa-feedback"></i> feedbacks
 		</a>								
 	</li>
 
 @endsection
 
-@section('content')    
-    @if ($user->id != 1)     
+@section('content')     
         <div class="box box-primary">
     		<div class="box-body">
     			<div class="row">
     				<div class="col-md-12">	
-    					 <form action="{{ route('user.update',$user->id) }}" method="post">
+                        <form action="{{ route('feedback.update',$feedback->id) }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <input type="hidden" name="_method" value="put">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                                        <label for="nome">Name</label>
-                                        <input type="text" name="name" class="form-control" maxlength="30" minlength="4" placeholder="Name" required="" autofocus value="{{$user->name}}">
-                                        @if($errors->has('name'))
+                                        <label for="nome">Image</label>
+                                        <input type="file" name="image" class="form-control"  placeholder="image" required="" value="{{ $feedback->image }}" autofocus>
+                                        <img src="{{ asset('upload/feedback/'.$feedback->image) }}" height="100" width="100" alt="">
+                                        @if($errors->has('image'))
                                             <span class="help-block">
-                                                <strong>{{ $errors->first('name') }}</strong>
+                                                <strong>{{ $errors->first('image') }}</strong>
                                             </span>
                                         @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                                        <label for="nome">E-mail</label>
-                                        <input type="email" name="email" class="form-control" placeholder="E-mail" required="" value="{{$user->email}}">
-                                        @if($errors->has('email'))
+                                    <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+                                        <label for="nome">Title</label>
+                                        <input type="text" name="title" class="form-control"  placeholder="title" required="" value="{{ $feedback->title }}" autofocus>
+                                        @if($errors->has('title'))
                                             <span class="help-block">
-                                                <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }}">
-                                        <label for="nome">Permission Group</label>
-                                        <select name="roles[]" class="form-control select2" multiple="multiple" data-placeholder="Permission Group">
-                                            @foreach($roles as $role)
-                                                @if($role->id != 1)
-                                                    @if(in_array($role->id, $roles_ids))
-                                                        <option value="{{ $role->id}}" selected="true"> {{ $role->name}} </option>
-                                                    @else
-                                                        <option value="{{ $role->id}}"> {{ $role->name}} </option>
-                                                    @endif                                             
-                                                @endif                                             
-                                            @endforeach
-                                        </select>
-                                        @if($errors->has('roles'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('roles') }}</strong>
+                                                <strong>{{ $errors->first('title') }}</strong>
                                             </span>
                                         @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <div class="form-group">                                    
-                                        <label>
-                                            <input type="hidden" name="active" value="0">
-                                            <input type="checkbox" name="active" value="1" class="minimal" id="icheck" 
-                                            @if($user->active == true)
-                                                checked
-                                            @endif
-                                            >
-                                            Active
-                                        </label>
+                                    <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
+                                        <label for="nome">Price</label>
+                                        <input type="number" name="price" class="form-control"  placeholder="Price" required="" value="{{ $feedback->price }}" autofocus>
+                                        @if($errors->has('price'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('price') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div> 
                                 <div class="col-lg-6">
-                                   <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-save"></i> Save</button>
+                                    <div class="form-group {{ $errors->has('duration') ? 'has-error' : '' }}">
+                                        <label for="nome">Duration</label>
+                                        <input type="text" name="duration" class="form-control"  placeholder="Duration" required="" value="{{ $feedback->duration }}" autofocus>
+                                        @if($errors->has('duration'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('duration') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div> 
+                                <div class="col-lg-6">
+                                    <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
+                                        <label for="nome">Description</label>
+                                        <textarea required type="text" name="description" id="editor" class="form-control" value="{{ $feedback->description }}" autofocus >{{ $feedback->description }}</textarea>
+                                        @if($errors->has('description'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('description') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div> 
+                                <div class="col-lg-6">
+                                    <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> Update</button>
                                 </div>
                             </div>
                         </form>
     				</div>
     			</div>
     		</div>
-    	</div>    
-    @endif
-
+    	</div> 
 @endsection
 
 @section('layout_js')    

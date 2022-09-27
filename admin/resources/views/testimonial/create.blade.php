@@ -2,7 +2,7 @@
 
 @section('icon_page', 'plus')
 
-@section('title', 'Add User')
+@section('title', 'Add Data')
 
 @section('menu_pagina')	
 		

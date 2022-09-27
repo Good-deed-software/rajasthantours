@@ -41,6 +41,12 @@
 		<script>
 			CKEDITOR.replace( 'editor' );
 		</script>
+		<script>
+			CKEDITOR.replace( 'editor2' );
+		</script>
+		<script>
+			CKEDITOR.replace( 'editor3' );
+		</script>
 		<script type="text/javascript"> 
 	      $(document).ready( function() {
 	        $('#flash_message').delay(3000).fadeOut();
